@@ -311,7 +311,8 @@ body {
 
 body.landing {
   background: #5b5579;
-  padding-bottom: 0; }
+  padding-bottom: 0;
+  color: white; }
 
 body.landing .navbar {
   margin-bottom: 0; }
