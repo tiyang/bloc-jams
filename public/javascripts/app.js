@@ -259,8 +259,19 @@ if (document.URL.match(/\/album.html/)) {
 //require('./collection');
 //require('./album');
 //require('./profile');
+blocJams = angular.module('BlocJams', ['ui.router']);
 
-angular.module('BlocJams', []).controller('Landing.controller', ['$scope', function($scope) {
+blocJams.config(['$stateProvider', '$locationProvider', function($stateProvider, $locationProvider) {
+  $locationProvider.html5Mode(true);
+
+  $stateProvider.state('landing', {
+    url: '/',
+    controller: 'Landing.controller',
+    templateUrl: '/templates/landing.html'
+  });
+}]);
+
+blocJams.controller('Landing.controller', ['$scope', function($scope) {
   $scope.appName = "Bloc Jams";
   $scope.subText = "Turn the music up!";
 
@@ -271,8 +282,8 @@ angular.module('BlocJams', []).controller('Landing.controller', ['$scope', funct
   $scope.appNameClicked = function() {
     function shuffle(o) {
       for (var j, x, i = o.length; i; j = Math.floor(Math.random()*i), x=o[--i], o[i]=o[j],o[j]=x);
-        return o;
-    };
+      return o;
+    }
     $scope.albumURLs = shuffle($scope.albumURLs);
   };
 

@@ -309,6 +309,9 @@ body {
   background: radial-gradient(#2b1339, #380c77);
   padding-bottom: 150px; }
 
+body .ui-view {
+  color: white; }
+
 body.landing {
   background: #5b5579;
   padding-bottom: 0;

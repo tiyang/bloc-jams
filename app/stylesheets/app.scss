@@ -18,6 +18,10 @@ body {
   padding-bottom: 150px;
 }
 
+body .ui-view {
+  color: white;
+}
+
 body.landing {
   background: #5B5579;
   padding-bottom: 0;
